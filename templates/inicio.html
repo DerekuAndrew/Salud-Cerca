@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Encuentra servicios médicos y organiza tu atención con SaludCerca.">
+  <title>SaludCerca | Tu salud, en buenas manos</title>
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+  <script src="{% static 'js/inicio.js' %}" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{% url 'inicio' %}" aria-label="SaludCerca, inicio"><span class="brand-mark">+</span> SaludCerca</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacion">Menú</button>
+    <nav id="navegacion" class="navigation" aria-label="Navegación principal">
+      <a href="#especialidades">Especialidades</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#beneficios">Beneficios</a>
+      <a class="nav-cta" href="/api/">Explorar servicios</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">CUIDARTE EMPIEZA AQUÍ</p>
+        <h1>Tu salud, en <span>buenas manos.</span></h1>
+        <p class="hero-copy">Encuentra información sobre atención médica y da el siguiente paso para cuidar de ti y de tu familia.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#especialidades">Ver especialidades</a>
+          <a class="button button-secondary" href="#como-funciona">Conocer cómo funciona</a>
+        </div>
+        <div class="trust-note"><span class="trust-icon">✓</span> Información clara para tomar mejores decisiones</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle circle-back"></div>
+        <div class="medical-card">
+          <div class="medical-symbol">+</div>
+          <div class="pulse-line"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <p>Tu bienestar importa</p>
+          <small>Atención centrada en ti</small>
+        </div>
+        <div class="floating-card floating-top"><span class="floating-icon">♥</span><span><strong>Cuida tu salud</strong><small>Un paso a la vez</small></span></div>
+        <div class="floating-card floating-bottom"><span class="calendar-icon">▦</span><span><strong>Organiza tu atención</strong><small>Información a tu alcance</small></span></div>
+      </div>
+    </section>
+
+    <section id="especialidades" class="section specialties-section">
+      <div class="section-heading">
+        <p class="eyebrow">SERVICIOS MÉDICOS</p>
+        <h2>Encuentra la atención que necesitas</h2>
+        <p>Explora algunas áreas de atención y conoce sus enfoques.</p>
+      </div>
+      <label class="search-box"><span aria-hidden="true">⌕</span><input id="buscador-especialidades" type="search" placeholder="Buscar una especialidad" aria-label="Buscar una especialidad"></label>
+      <div class="specialty-grid" id="lista-especialidades">
+        <article class="specialty-card" data-search="medicina general consulta prevención"><div class="specialty-icon icon-blue">✚</div><h3>Medicina general</h3><p>Orientación inicial y atención para necesidades comunes de salud.</p><a href="/api/especialidades/">Consultar información <span>→</span></a></article>
+        <article class="specialty-card" data-search="pediatría niños infantil"><div class="specialty-icon icon-mint">♡</div><h3>Pediatría</h3><p>Atención enfocada en la salud y el desarrollo de niñas y niños.</p><a href="/api/especialidades/">Consultar información <span>→</span></a></article>
+        <article class="specialty-card" data-search="cardiología corazón cardiovascular"><div class="specialty-icon icon-lilac">♥</div><h3>Cardiología</h3><p>Prevención, valoración y seguimiento de la salud cardiovascular.</p><a href="/api/especialidades/">Consultar información <span>→</span></a></article>
+        <article class="specialty-card" data-search="dermatología piel"><div class="specialty-icon icon-peach">✦</div><h3>Dermatología</h3><p>Consulta información sobre el cuidado de la piel y sus afecciones.</p><a href="/api/especialidades/">Consultar información <span>→</span></a></article>
+      </div>
+      <p id="sin-resultados" class="empty-state" hidden>No se encontraron especialidades con ese término.</p>
+      <p class="section-note">Las especialidades mostradas son ejemplos de la interfaz. La información definitiva dependerá de los registros disponibles en el sistema.</p>
+    </section>
+
+    <section id="como-funciona" class="section process-section">
+      <div class="section-heading"><p class="eyebrow">SENCILLO Y CLARO</p><h2>¿Cómo funciona SaludCerca?</h2><p>Una ruta sencilla para comenzar a organizar tu atención.</p></div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><h3>Explora</h3><p>Revisa las especialidades y la información médica disponible.</p></article>
+        <article class="step-card"><span class="step-number">02</span><h3>Compara opciones</h3><p>Consulta los datos disponibles para identificar la atención que buscas.</p></article>
+        <article class="step-card"><span class="step-number">03</span><h3>Continúa tu proceso</h3><p>Accede a los servicios del sistema mientras se completa el flujo de citas.</p></article>
+      </div>
+    </section>
+
+    <section id="beneficios" class="closing-section"><div><p class="eyebrow">SALUD CERCA DE TI</p><h2>Dedica más tiempo a cuidar de ti.</h2><p>SaludCerca reúne la estructura necesaria para organizar información de usuarios, médicos y citas en un solo proyecto.</p></div><a class="button button-light" href="/api/">Explorar la plataforma <span>→</span></a></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="{% url 'inicio' %}"><span class="brand-mark">+</span> SaludCerca</a><p>Información organizada para acercarte a la atención médica.</p><span>Proyecto académico · SaludCerca</span></footer>
+</body>
+</html>
