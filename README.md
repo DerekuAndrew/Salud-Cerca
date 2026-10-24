@@ -48,5 +48,3 @@ La página inicial incluye navegación adaptable, tarjetas de especialidades con
 ## API
 
 Los routers agrupan los recursos por aplicación. Los endpoints disponibles incluyen usuarios, pacientes, centros, especialidades, doctores, horarios, citas, reseñas, notificaciones y configuraciones. La API utiliza autenticación por sesión y Basic Auth para desarrollo.
-
-Consulta `docs/bitacora_avance_2.md` para el registro del avance funcional y las tareas pendientes.
